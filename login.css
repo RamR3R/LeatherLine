@@ -1,0 +1,67 @@
+body
+{
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+}
+#header{
+    height: 60px;
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px  ;
+}
+#header>img{
+    width: 20%;
+    height: 100%;
+}
+#login-info{
+    /* border: 1px solid blue; */
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#login-container{
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    /* border: 1px solid green; */
+    justify-content: space-around;
+}
+.sign{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    /* border: 1px solid orange; */
+}
+.sign>div{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    align-items: center;
+    margin-bottom: 10px;
+}
+.sign>input{
+    /* width: 100%; */
+    height: 30px;
+    margin-bottom: 20px;
+}
+.sign>div>div{
+    display: flex;
+    /* justify-content: space-between; */
+    width: 40%;
+    /* border: solid green; */
+}
+.sign>div>div>input{
+    width: 15%;
+    margin-right: 5px;
+}
+.sign>button{
+    height: 40px;
+}
