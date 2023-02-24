@@ -7,25 +7,29 @@ body
 #header{
     height: 60px;
     display: flex;
-    /* border: 1px solid red; */
+    border: 1px solid red;
     justify-content: space-between;
     align-items: center;
     padding-right: 20px;
     padding-left: 20px  ;
 }
-#header>img{
+#header>a{
     width: 20%;
-    height: 100%;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+#header>a>img{
+    width: 100%;
 }
 #login-info{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 20%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 #navbar{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin-top: 10px;
     display: flex;
     justify-content: space-evenly;
@@ -56,4 +60,52 @@ body
 #ad img{
     width: 100%;
     /* height: 230px; */
+}
+
+
+#container{
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap : 20px;
+}
+#container img{
+    width: 100%;
+}
+#container>div{
+    box-shadow: 1px 1px 4px 1px rgb(218, 218, 218);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+#home{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+#home>div{
+    display: flex;
+}
+img{
+    width: 100%;
+}
+#home button{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+#home>div>button:nth-child(2){
+    margin-left: 50px;
+}
+
+video{
+    width: 110%;
+    margin-top: 30px;
 }

@@ -17,6 +17,14 @@ body
     width: 20%;
     height: 100%;
 }
+#header>a{
+    width: 20%;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+#header>a>img{
+    width: 100%;
+}
 #login-info{
     /* border: 1px solid blue; */
     width: 20%;
