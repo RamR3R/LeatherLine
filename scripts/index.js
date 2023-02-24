@@ -12,11 +12,17 @@ fetch(api)
 
 function display(data)
 {
-    let body  = document.querySelector("body");
+    let body  = document.querySelector("#container");
     data.forEach(element => {
+        let card = document.createElement("div");
         let img = document.createElement("img");
-        img.setAttribute("src",element.url)
-        body.append(img);
+        img.setAttribute("src",element.image);
+        let title = document.createElement("h3");
+        title.innerText = element.name;
+        let price = document.createElement("h4");
+        price.innerText = element.price;
+        card.append(img,title,price);
+        body.append(card);
     });
     
 }
