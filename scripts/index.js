@@ -16,7 +16,7 @@ function display(data)
     data.forEach(element => {
         let card = document.createElement("div");
         let img = document.createElement("img");
-        img.setAttribute("src",element.image);
+        img.setAttribute("src",element.image1);
         let title = document.createElement("h3");
         title.innerText = element.name;
         let price = document.createElement("h4");

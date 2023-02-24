@@ -13,15 +13,23 @@ login.addEventListener("click",()=>{
     let email = document.querySelector("#login > input[type=email]");
     let password = document.querySelector("#login > input[type=password]");
     let remeber = document.querySelector("#signup  input[type=checkbox");
-    
+    let eflag = true , pflag = true;
     for(let i = 0 ; i<DataBase.length ; i++)
     {
+        if(DataBase[i].email == email.value)
+        eflag  = false;
+        if(DataBase[i].password == password.value)
+        pflag = false;
         if(DataBase[i].email == email.value  && DataBase[i].password == password.value )
         {
             alert("Login Successfull");
             window.location.href = "./index.html";
         }
     }
+    if(!eflag)
+    alert("Email not found Please Signup");
+    if(!pflag)
+    alert("Wrong Password");
 })
 
 
