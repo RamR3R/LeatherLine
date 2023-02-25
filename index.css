@@ -6,7 +6,12 @@ body
 }
 #header{
     height: 60px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: white;
     display: flex;
+    overflow: hidden;
     /* border: 1px solid red; */
     box-shadow: 1px 1px 4px 1px rgb(230, 230, 230);
     justify-content: space-between;
@@ -37,7 +42,13 @@ body
 #navbar{
     /* border: 1px solid red; */
     /* box-shadow: 1px 1px 10px 5px rgb(228, 228, 228); */
-    margin-top: 10px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    /* margin-top: 10px; */
     display: flex;
     justify-content: space-evenly;
     font-size: 20px;
@@ -221,16 +232,17 @@ h1{
 }
 
 #footer{
-    position: relative;
-    left: 10%;
-    right: 10%;
+    height: 20px;
+    font-size: 16px;
     bottom: 0;
-    width: 100%;
+    width: 90%;
     margin: auto;
-    margin-top: 50px;
-    padding: -20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 1px solid red; */
+    padding: 20px 40px 20px 40px;
+    border: 1px solid white;
+    box-shadow: 1px 1px 10px 1px rgb(193, 192, 192);
 }
