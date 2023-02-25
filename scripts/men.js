@@ -44,6 +44,16 @@ function display(data)
         title.innerText = element.name;
         let price = document.createElement("h4");
         price.innerText = element.price;
+        let add = document.createElement("div");
+        let wish = document.createElement("button");
+        wish.innerText = "Add to WishList";
+        wish.addEventListener("click",()=>{
+            wish.innerText = "WishListed"
+            wish.style.backgroundColor = 'pink';
+            let LS  =  JSON.parse(localStorage.getItem("wish")) || [];
+            LS.push(element);
+            localStorage.setItem("wish",JSON.stringify(LS));
+        })
         let buy = document.createElement("button");
         buy.innerText = "Buy";
         buy.addEventListener("click",()=>{
@@ -51,8 +61,8 @@ function display(data)
             LS.push(element);
             localStorage.setItem("cart",JSON.stringify(LS));
         })
-
-        card.append(img,title,price,buy);
+        add.append(wish,buy);
+        card.append(img,title,price,add);
         body.append(card);
     });
     
