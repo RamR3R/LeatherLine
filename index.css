@@ -222,12 +222,15 @@ h1{
 
 #footer{
     position: fixed;
-    left: 0;
+    left: 10%;
+    right: 10%;
     bottom: 0;
-    width: 90%;
+    width: 100%;
     margin: auto;
+    margin-top: 50px;
     padding: -20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid red;
 }
