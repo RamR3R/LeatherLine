@@ -8,6 +8,7 @@ body
     height: 60px;
     display: flex;
     /* border: 1px solid red; */
+    box-shadow: 1px 1px 4px 1px rgb(230, 230, 230);
     justify-content: space-between;
     align-items: center;
     padding-right: 20px;
@@ -35,6 +36,7 @@ body
 }
 #navbar{
     /* border: 1px solid red; */
+    /* box-shadow: 1px 1px 10px 5px rgb(228, 228, 228); */
     margin-top: 10px;
     display: flex;
     justify-content: space-evenly;
@@ -195,13 +197,14 @@ h1{
 }
 #offer-content{
     width: 80%;
-    /* height: 300px; */
+    height: 400px;
     margin: auto;
     display: flex;
-    margin-top: 20px;
+    margin-top: 40px;
     justify-content: space-around;
     align-items: center;
-    /* border: 1px solid black; */
+    border: 1px solid black;
+    box-shadow: 1px 1px 10px 1px rgb(193, 192, 192);
     text-align: center;
 }
 #offer-content>button{
@@ -215,4 +218,16 @@ h1{
     font-size: 20px;
     text-decoration: none;
     color: brown;
+}
+
+#footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 90%;
+    margin: auto;
+    padding: -20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

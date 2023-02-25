@@ -21,7 +21,7 @@ let data = [
     },
     {
         offer:"Get flat 25% off on Purchase on Tabby Products Alone",
-        link:"loginPage.html",
+        link:"./tabby.html",
         linktext:"Tabby Now",
         cupon:'FLAT25',
     }
