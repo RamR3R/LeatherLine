@@ -221,7 +221,7 @@ h1{
 }
 
 #footer{
-    position: fixed;
+    position: relative;
     left: 10%;
     right: 10%;
     bottom: 0;
@@ -232,5 +232,5 @@ h1{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
