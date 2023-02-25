@@ -8,17 +8,19 @@ fetch(api)
     display(DataBase);
 })
 
-let search = document.getElementById("search-btn");
-search.addEventListener("click",()=>{
-    let searchInput  = document.getElementById("search-input")
-    fetch(api+`&search=${searchInput.value}`)
-    .then(result=>result.json())
-    .then(data=>{
-    console.log(data);
-    DataBase = data;
-    display(DataBase);
-    })
-})
+// let search = document.getElementById("search-btn");
+// search.addEventListener("click",()=>{
+//     let searchInput  = document.getElementById("search-input")
+//     let searchapi = api+`&color=${searchInput.value}`;
+//     console.log(searchapi);
+//     fetch(searchapi)
+//     .then(result=>result.json())
+//     .then(data=>{
+//     console.log(data);
+//     DataBase = data;
+//     display(DataBase);
+//     })
+// })
 
 
 function display(data)
