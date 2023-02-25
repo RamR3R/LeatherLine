@@ -1,4 +1,4 @@
-let api = `https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products/?filter=male`;
+let api = `https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products/?type=wallet`;
 let DataBase;
 fetch(api)
 .then(result=>result.json())
@@ -10,9 +10,9 @@ fetch(api)
 
 let search = document.getElementById("search-btn");
 search.addEventListener("click",()=>{
-    console.log(api);
     let searchInput  = document.getElementById("search-input")
-    fetch(api+`&search=${searchInput.value}`)
+    let api = api + searchInput.value;
+    fetch(api)
     .then(result=>result.json())
     .then(data=>{
     console.log(data);
