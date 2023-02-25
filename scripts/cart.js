@@ -2,6 +2,24 @@ let DataBase = JSON.parse(localStorage.getItem("cart")) || [];
 display(DataBase);
 total(DataBase);
 
+let filter = document.getElementById("filter");
+filter.addEventListener("change",()=>{
+    data = JSON.parse(localStorage.getItem("cart")) || [];
+    if(filter.value == "asc" || filter.value == "")
+    {
+        data.sort((a,b)=>a.price-b.price);
+    }
+    else
+    {
+        data.sort((a,b)=>b.price-a.price);
+    }
+    console.log(data);
+    display(data);
+})
+
+
+
+
 function display(data)
 {
     let body  = document.querySelector("#container");
