@@ -1,4 +1,6 @@
-let api = `https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products/?filter=male`;
+const api = new URL(`https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products`);
+api.searchParams.append('sex', 'men');
+console.log(api);
 let DataBase;
 fetch(api)
 .then(result=>result.json())
@@ -10,9 +12,11 @@ fetch(api)
 
 let search = document.getElementById("search-btn");
 search.addEventListener("click",()=>{
-    console.log(api);
     let searchInput  = document.getElementById("search-input")
-    fetch(api+`&search=${searchInput.value}`)
+    let searchapi = new URL(api);
+    console.log(searchapi);
+    searchapi.searchParams.append('search', 'red');
+    fetch(searchapi)
     .then(result=>result.json())
     .then(data=>{
     console.log(data);

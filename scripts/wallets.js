@@ -1,4 +1,4 @@
-let api = `https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products/?type=wallet`;
+let api = `https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products/?filter=wallets`;
 let DataBase;
 fetch(api)
 .then(result=>result.json())
@@ -11,8 +11,7 @@ fetch(api)
 let search = document.getElementById("search-btn");
 search.addEventListener("click",()=>{
     let searchInput  = document.getElementById("search-input")
-    let api = api + searchInput.value;
-    fetch(api)
+    fetch(api+`&search=${searchInput.value}`)
     .then(result=>result.json())
     .then(data=>{
     console.log(data);
@@ -39,7 +38,7 @@ function display(data)
         let title = document.createElement("h3");
         title.innerText = element.name;
         let price = document.createElement("h4");
-        price.innerText = element.price;
+        price.innerText = '$'+element.price;
         let buy = document.createElement("button");
         buy.innerText = "Buy";
         buy.addEventListener("click",()=>{
