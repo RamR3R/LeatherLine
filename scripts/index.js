@@ -8,6 +8,7 @@ fetch(api)
     display(DataBase);
 })
 
+let search = document.getElementById("")
 
 
 function display(data)
