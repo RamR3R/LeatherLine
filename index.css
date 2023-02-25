@@ -7,7 +7,7 @@ body
 #header{
     height: 60px;
     display: flex;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     justify-content: space-between;
     align-items: center;
     padding-right: 20px;
@@ -67,7 +67,7 @@ body
     width: 80%;
     margin: auto;
     margin-top: 30px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap : 20px;
@@ -79,6 +79,7 @@ body
     box-shadow: 1px 1px 4px 1px rgb(218, 218, 218);
     padding-left: 5px;
     padding-right: 5px;
+    /* border: 1px solid blue; */
 }
 
 
@@ -108,4 +109,82 @@ img{
 video{
     width: 110%;
     margin-top: 30px;
+}
+
+#search-bar{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top:30px;
+}
+#search-bar>div>img{
+    width:100%;
+}
+#search-bar>div:nth-child(1){
+    /* border: 1px solid green; */
+    width: 10%;
+}
+#search-bar>div:nth-child(2){
+    width: 60%;
+    /* border:1px solid blue; */
+    display: flex;
+    align-items: center;
+}
+#search-input{
+    width: 70%;
+    height: 50%;
+    margin-left: 20px;
+    border: 1px solid brown;
+    border-radius: 10px;
+    font-size: 24px;
+}
+#search-input+button{
+    width: 30%;
+    margin-left: 20px;
+    color: brown;
+}
+#search-input::placeholder{
+    /* border: 1px solid red; */
+    font-size: 24px;    
+}
+button{
+    height: 40px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border: 1px solid brown;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#notify{
+    width: 100%;
+    grid-area: 1/1/2/5;
+    text-align: center;
+    color: brown;
+    padding-bottom: 20px;
+}
+#notify a{
+    margin-right: 30px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#cart-filter{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+#cart-filter>div{
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#card-filter select{
+    height: 60%;
 }
