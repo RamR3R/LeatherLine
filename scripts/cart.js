@@ -1,5 +1,6 @@
 let DataBase = JSON.parse(localStorage.getItem("cart")) || [];
-display(DataBase)
+display(DataBase);
+total(DataBase);
 
 function display(data)
 {
@@ -27,9 +28,27 @@ function display(data)
         let title = document.createElement("h3");
         title.innerText = element.name;
         let price = document.createElement("h4");
-        price.innerText = element.price;
-        card.append(img,title,price);
+        price.innerText = "$"+element.price;
+        let buy = document.createElement("button");
+        buy.innerText = "Delete";
+        buy.addEventListener("click",()=>{
+            let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
+            LS.splice(data.indexOf(element),1);
+            localStorage.setItem("cart",JSON.stringify(LS));
+            display(LS);
+            total(LS);
+        })
+        card.append(img,title,price,buy);
         body.append(card);
     });
     
+}
+
+function total(data){
+    let price = document.getElementById("total");
+    let x = 0;
+    data.forEach(element=>{
+        x += Number(element.price);
+    })
+    price.innerText = "$"+x;
 }

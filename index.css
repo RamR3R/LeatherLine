@@ -167,7 +167,24 @@ button{
 }
 #notify a{
     margin-right: 30px;
-    
     text-decoration: none;
     font-size: 20px;
+}
+
+#cart-filter{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+#cart-filter>div{
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#card-filter select{
+    height: 60%;
 }

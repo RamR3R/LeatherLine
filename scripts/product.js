@@ -40,7 +40,15 @@ function display(data)
         title.innerText = element.name;
         let price = document.createElement("h4");
         price.innerText = element.price;
-        card.append(img,title,price);
+        let buy = document.createElement("button");
+        buy.innerText = "Buy";
+        buy.addEventListener("click",()=>{
+            let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
+            LS.push(element);
+            localStorage.setItem("cart",JSON.stringify(LS));
+        })
+
+        card.append(img,title,price,buy);
         body.append(card);
     });
     

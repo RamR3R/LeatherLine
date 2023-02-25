@@ -31,20 +31,21 @@
         <a href="./wallets">WALLETS</a>
         <a href="./offers">OFFERS</a>
     </div>
-    <div id="search-bar">
+    <div id="cart-filter">
+        <h1>Total Bag Value: <span id="total"></span></h1>
         <div>
-            <img src="./src/images/search icon.png" alt="Error">
+            <h3>Price</h3>
+            <select id="filter">
+                <option value=""><---></option>
+                <option value="dsc">High -> Low</option>
+                <option value="asc">Low -> High</option>
+            </select>
         </div>
-        <div>
-            <input type="text" id="search-input" placeholder="Enter Search Text">
-            <button id="search-btn">Search</button>
-        </div>
-    </div>
-    <div id="filter">
     </div>
     <div id="container">
 
     </div>
+    
 </body>
 </html>
 <script src="./scripts/cart.js">
