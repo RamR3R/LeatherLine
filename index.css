@@ -7,7 +7,7 @@ body
 #header{
     height: 60px;
     display: flex;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     justify-content: space-between;
     align-items: center;
     padding-right: 20px;
@@ -67,7 +67,7 @@ body
     width: 80%;
     margin: auto;
     margin-top: 30px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap : 20px;
@@ -108,4 +108,42 @@ img{
 video{
     width: 110%;
     margin-top: 30px;
+}
+
+#search-bar{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top:30px;
+}
+#search-bar>div>img{
+    width:100%;
+}
+#search-bar>div:nth-child(1){
+    /* border: 1px solid green; */
+    width: 10%;
+}
+#search-bar>div:nth-child(2){
+    width: 60%;
+    /* border:1px solid blue; */
+    display: flex;
+    align-items: center;
+}
+#search-input{
+    width: 70%;
+    height: 50%;
+    margin-left: 20px;
+    border: 1px solid brown;
+    border-radius: 10px;
+}
+#search-input+button{
+    width: 30%;
+    margin-left: 20px;
+    height: 40px;
+    color: brown;
+    background-color: white;
+    border: 1px solid brown;
+    border-radius: 10px;
 }
