@@ -193,3 +193,26 @@ h1{
     text-align: center;
     font-size: 40px;
 }
+#offer-content{
+    width: 80%;
+    /* height: 300px; */
+    margin: auto;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid black; */
+    text-align: center;
+}
+#offer-content>button{
+    width: 10%;
+    height: 50px;
+}
+#offer-content>div{
+    width:50%;
+}
+#offer-content a{
+    font-size: 20px;
+    text-decoration: none;
+    color: brown;
+}
