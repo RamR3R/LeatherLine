@@ -66,3 +66,28 @@
 </html>
 <script src="./scripts/men.js">
 </script>
+<script>
+
+    function toogledisplay()
+        {
+            document.querySelector("#dropdown1").classList.toggle("show")
+            document.querySelector("#dropdown2").classList.remove("show");
+        }
+    function toogledisplay2()
+        {
+            document.querySelector("#dropdown2").classList.toggle("show");
+            document.querySelector("#dropdown1").classList.remove("show");
+        }
+        window.onclick = (event)=>{
+            if(!(event.target.matches('.dropdown-btn') || event.target.matches("#submit") || event.target.matches("input")))
+            {
+                let drop = document.getElementsByClassName("dropdown-content");
+    
+                for(let i = 0 ; i<drop.length ;i++)
+                {
+                    if(drop[i].classList.contains('show'))
+                    drop[i].classList.remove('show');
+                }
+            }
+        }
+    </script>
