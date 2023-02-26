@@ -9,6 +9,15 @@ fetch(api)
         DataBase = data;
         console.log(data);
     })
+
+let checklogin = localStorage.getItem("login");
+let container = document.getElementById("login-container");
+if(checklogin != null){
+container.style.display = "none";
+let h1 = document.createElement("h1");
+h1.innerText = `Logged in Ad ${checklogin.firstname+" "+checklogin.lastname}`
+}
+else{
 login.addEventListener("click",()=>{
     let email = document.querySelector("#login > input[type=email]");
     let password = document.querySelector("#login > input[type=password]");
@@ -41,21 +50,24 @@ signup.addEventListener("click",()=>{
     let email = document.querySelector("#signup > input[type=email]");
     let password = document.querySelector("#signup > input[type=password]");
     let remeber = document.querySelector("#signup  input[type=checkbox");
-
+    let details = {
+        firstname: fname.value,
+    lastname: lname.value,
+    email: email.value,
+    password: password.value,
+    }
     fetch(api,{
         method:'POST',
         headers: {'content-type':'application/json'},
-        body:JSON.stringify({
-            firstname: fname.value,
-        lastname: lname.value,
-        email: email.value,
-        password: password.value,
-        })
+        body:JSON.stringify(details)
     })
     .then(result =>result.json())
     .then(data=>{
         console.log(data);
+        let logininfo = details;
+            localStorage.setItem("login",JSON.stringify(logininfo));
         alert("Signed in Successfull");
         window.location.href = "./cart.html";
     })
 })
+}
