@@ -40,11 +40,19 @@
             <button id="search-btn">Search</button>
         </div>
     </div>
-    <div id="filter">
-    </div>
-    <h1>MENS COLLECTIONS</h1>
-    <div id="container">
-
+    <div id="main">
+        <div id="filter">
+            <button class="dropdown-btn" onclick="toogledisplay()">Filter using Price</button>
+            <div class="dropdown-content" id="dropdown1">
+                <input type="number" placeholder="From" id="from">
+                <input type="number" placeholder="To" id="to">
+                <button id="submitprice">Filter</button>
+            </div>
+        </div>
+        <h1>MENS COLLECTIONS</h1>
+        <div id="container">
+    
+        </div>
     </div>
     <div id="footer">
         <h2>Contact us</h2>
@@ -58,3 +66,22 @@
 </html>
 <script src="./scripts/men.js">
 </script>
+<script>
+
+    function toogledisplay()
+        {
+            document.querySelector("#dropdown1").classList.toggle("show")
+        }
+        window.onclick = (event)=>{
+            if(!(event.target.matches('.dropdown-btn') || event.target.matches("#submit") || event.target.matches("input")))
+            {
+                let drop = document.getElementsByClassName("dropdown-content");
+    
+                for(let i = 0 ; i<drop.length ;i++)
+                {
+                    if(drop[i].classList.contains('show'))
+                    drop[i].classList.remove('show');
+                }
+            }
+        }
+    </script>

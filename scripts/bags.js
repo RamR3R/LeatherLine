@@ -1,4 +1,4 @@
-let api = `https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products/?filter=bag`;
+let api = `https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products/?type=bag`;
 let DataBase;
 fetch(api)
 .then(result=>result.json())
@@ -7,18 +7,37 @@ fetch(api)
     DataBase = data;
     display(DataBase);
 })
+.catch(Error=>{console.error(Error)})
+
 
 let search = document.getElementById("search-btn");
 search.addEventListener("click",()=>{
-    console.log(api);
     let searchInput  = document.getElementById("search-input")
-    fetch(api+`&search=${searchInput.value}`)
-    .then(result=>result.json())
-    .then(data=>{
-    console.log(data);
-    DataBase = data;
-    display(DataBase);
+    searchInput = searchInput.value;
+    searchInput = searchInput.toLowerCase();
+    console.log(searchInput)
+    let filterData = DataBase.filter((element)=>{
+        if(element.color.toLowerCase().includes(searchInput) || element.name.toLowerCase().includes(searchInput)|| element.type.toLowerCase().includes(searchInput) || element.sex.toLowerCase().includes(searchInput))
+        return true;
+        else
+        return false;
     })
+    console.log(filterData);
+    display(filterData)
+})
+
+let filter = document.querySelector("#submitprice");
+filter.addEventListener("click",()=>{
+    let from = document.getElementById("from").value;
+    let to = document.getElementById("to").value;
+
+    let filterData = DataBase.filter((element)=>{
+        if(element.price <= to && element.price>= from)
+        return true;
+        else
+        return false;
+    })
+    display(filterData);
 })
 
 
@@ -56,6 +75,7 @@ function display(data)
             let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
             LS.push(element);
             localStorage.setItem("cart",JSON.stringify(LS));
+            alert("Product added to cart");
         })
         add.append(wish,buy);
         card.append(img,title,price,add);
