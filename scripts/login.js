@@ -17,33 +17,44 @@ container.style.display = "none";
 let h1 = document.createElement("h1");
 h1.innerText = `Logged in as   ${checklogin.firstname+" "+checklogin.lastname}`
 let body = document.getElementById("logindetails");
+let btn = document.createElement("button");
+btn.innerText = "Click to Log out";
+btn.style.margin = "auto";
+btn.addEventListener("click",()=>{
+    localStorage.removeItem("login");
+    window.location.href = "./loginPage.html";
+})
 h1.style.textAlign = "center";
-body.append(h1);
+body.append(h1,btn);
 }
 else{
 login.addEventListener("click",()=>{
     let email = document.querySelector("#login > input[type=email]");
     let password = document.querySelector("#login > input[type=password]");
     let remeber = document.querySelector("#signup  input[type=checkbox");
-    let eflag = true , pflag = true;
+    let eflag = true , pflag = true,flag =false;
     for(let i = 0 ; i<DataBase.length ; i++)
     {
-        if(DataBase[i].email == email.value)
-        eflag  = false;
-        if(DataBase[i].password == password.value)
-        pflag = false;
+        // if(DataBase[i].email == email.value)
+        // eflag  = false;
+        // if(DataBase[i].password == password.value)
+        // pflag = false;
         if(DataBase[i].email == email.value  && DataBase[i].password == password.value )
         {
+            flag= true;
             let logininfo = DataBase[i];
             localStorage.setItem("login",JSON.stringify(logininfo));
             alert("Login Successfull");
             window.location.href = "./cart.html";
         }
     }
-    if(!eflag)
-    alert("Email not found Please Signup");
-    if(!pflag)
-    alert("Wrong Password");
+    // if(!eflag)
+    // alert("Email not found Please Signup");
+    // if(!pflag)
+    // alert("Wrong Password");
+    if(flag)
+    alert("Incorrect Credentials Check it Bro!)");
+
 })
 
 
