@@ -41,10 +41,26 @@
         </div>
     </div>
     <h1>NEW ARRIVALS TABBY COLLECTIONS</h1>
-    <div id="filter">
-    </div>
-    <div id="container">
-
+    <div id="main">
+        <div id="filter">
+            <button class="dropdown-btn" onclick="toogledisplay()">Filter using Price</button>
+            <div class="dropdown-content" id="dropdown1">
+                <input type="number" placeholder="Min value">
+                <input type="number" placeholder="Max value">
+                <button id="submit">Filter</button>
+            </div>
+            <button class="dropdown-btn" onclick="toogledisplay2()" >Filter using Discount</button>
+            <div class="dropdown-content" id="dropdown2">
+                <div><input type="checkbox" placeholder="5% Discount"><span>5% discount</span></div>
+                <div><input type="checkbox" placeholder="10% Discount"><span>10% discount</span></div>
+                <button id="submit">Filter</button>
+            </div>
+            
+            
+        </div>
+        <div id="container">
+    
+        </div>
     </div>
     <div id="footer">
         <h2>Contact us</h2>
@@ -57,4 +73,30 @@
 </body>
 </html>
 <script src="./scripts/product.js">
+</script>
+
+<script>
+
+function toogledisplay()
+    {
+        document.querySelector("#dropdown1").classList.toggle("show")
+        document.querySelector("#dropdown2").classList.remove("show");
+    }
+function toogledisplay2()
+    {
+        document.querySelector("#dropdown2").classList.toggle("show");
+        document.querySelector("#dropdown1").classList.remove("show");
+    }
+    window.onclick = (event)=>{
+        if(!(event.target.matches('.dropdown-btn') || event.target.matches("#submit") || event.target.matches("input")))
+        {
+            let drop = document.getElementsByClassName("dropdown-content");
+
+            for(let i = 0 ; i<drop.length ;i++)
+            {
+                if(drop[i].classList.contains('show'))
+                drop[i].classList.remove('show');
+            }
+        }
+    }
 </script>
