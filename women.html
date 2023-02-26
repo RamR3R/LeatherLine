@@ -72,12 +72,6 @@
     function toogledisplay()
         {
             document.querySelector("#dropdown1").classList.toggle("show")
-            document.querySelector("#dropdown2").classList.remove("show");
-        }
-    function toogledisplay2()
-        {
-            document.querySelector("#dropdown2").classList.toggle("show");
-            document.querySelector("#dropdown1").classList.remove("show");
         }
         window.onclick = (event)=>{
             if(!(event.target.matches('.dropdown-btn') || event.target.matches("#submit") || event.target.matches("input")))
