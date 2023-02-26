@@ -8,10 +8,12 @@ filter.addEventListener("change",()=>{
     if(filter.value == "asc" || filter.value == "")
     {
         data.sort((a,b)=>a.price-b.price);
+        localStorage.setItem("cart",JSON.stringify(data));
     }
     else
     {
         data.sort((a,b)=>b.price-a.price);
+        localStorage.setItem("cart",JSON.stringify(data));
     }
     console.log(data);
     display(data);
