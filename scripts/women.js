@@ -1,4 +1,4 @@
-let api = `https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products/?filter=women`;
+let api = `https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products/?sex=female`;
 let DataBase;
 fetch(api)
 .then(result=>result.json())

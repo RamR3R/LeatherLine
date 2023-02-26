@@ -1,4 +1,4 @@
-let api = `https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products/?filter=wallets`;
+let api = `https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products/?type=wallets`;
 let DataBase;
 fetch(api)
 .then(result=>result.json())

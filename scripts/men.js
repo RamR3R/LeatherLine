@@ -1,6 +1,4 @@
-const api = new URL(`https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products`);
-api.searchParams.append('sex', 'men');
-console.log(api);
+const api = new URL(`https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products?sex=men`);
 let DataBase;
 fetch(api)
 .then(result=>result.json())

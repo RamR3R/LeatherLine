@@ -1,4 +1,4 @@
-let api = `https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products/?filter=bag`;
+let api = `https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products/?type=bag`;
 let DataBase;
 fetch(api)
 .then(result=>result.json())
