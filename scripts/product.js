@@ -56,6 +56,10 @@ function display(data)
         let card = document.createElement("div");
         let img = document.createElement("img");
         img.setAttribute("src",element.image1);
+        img.addEventListener("click",()=>{
+            localStorage.setItem("indi",JSON.stringify(element));
+            window.location.href = "./indi.html";
+        })
         let title = document.createElement("h3");
         title.innerText = element.name;
         let price = document.createElement("h4");
