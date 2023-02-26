@@ -10,12 +10,15 @@ fetch(api)
         console.log(data);
     })
 
-let checklogin = localStorage.getItem("login");
+let checklogin = JSON.parse(localStorage.getItem("login"));
 let container = document.getElementById("login-container");
 if(checklogin != null){
 container.style.display = "none";
 let h1 = document.createElement("h1");
-h1.innerText = `Logged in Ad ${checklogin.firstname+" "+checklogin.lastname}`
+h1.innerText = `Logged in as   ${checklogin.firstname+" "+checklogin.lastname}`
+let body = document.getElementById("logindetails");
+h1.style.textAlign = "center";
+body.append(h1);
 }
 else{
 login.addEventListener("click",()=>{
