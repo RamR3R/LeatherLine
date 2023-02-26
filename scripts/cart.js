@@ -53,6 +53,7 @@ function display(data)
             let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
             LS.splice(data.indexOf(element),1);
             localStorage.setItem("cart",JSON.stringify(LS));
+            alert("Product deleted from cart");
             display(LS);
             total(LS);
         })

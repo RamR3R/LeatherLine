@@ -57,6 +57,7 @@ function display(data)
             LS.splice(data.indexOf(element),1);
             localStorage.setItem("wish",JSON.stringify(LS));
             display(LS);
+            alert("Product Added to Cart");
 
         })
         let delet = document.createElement("button");
@@ -66,6 +67,7 @@ function display(data)
             LS.splice(data.indexOf(element),1);
             localStorage.setItem("wish",JSON.stringify(LS));
             display(LS);
+            alert("Product Removed from Wishlist");
         })
         add.append(buy,delet);
 

@@ -75,6 +75,7 @@ function display(data)
             let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
             LS.push(element);
             localStorage.setItem("cart",JSON.stringify(LS));
+            alert("Product added to cart");
         })
         add.append(wish,buy);
         card.append(img,title,price,add);

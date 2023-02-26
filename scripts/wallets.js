@@ -68,6 +68,7 @@ function display(data)
             let LS  =  JSON.parse(localStorage.getItem("wish")) || [];
             LS.push(element);
             localStorage.setItem("wish",JSON.stringify(LS));
+            alert("Product Added to Wish List")
         })
         let buy = document.createElement("button");
         buy.innerText = "Buy";
@@ -75,6 +76,7 @@ function display(data)
             let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
             LS.push(element);
             localStorage.setItem("cart",JSON.stringify(LS));
+            alert("Product Added to Cart");
         })
         add.append(wish,buy);
         card.append(img,title,price,add);
