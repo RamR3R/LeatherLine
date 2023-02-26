@@ -31,20 +31,29 @@
         <a href="./wallets.html">WALLETS</a>
         <a href="./offers.html">OFFERS</a>
     </div>
-    <div id="cart-filter">
-        <h1>Total Bag Value: <span id="total"></span></h1>
-        <div>
-            <h3>Price sort</h3>
-            <select id="filter">
-                <option value=""><---></option>
-                <option value="dsc">High -> Low</option>
-                <option value="asc">Low -> High</option>
-            </select>
-        </div>
-        <button id="checkout">Proceed to CheckOut</button>
-    </div>
-    <div id="container">
-
+    <div id="checkout">
+        <table id="details-table">
+            <tr>
+                <td class="feild">Name</td>
+                <td id="name"></td>
+            </tr>
+            <tr>
+                <td class="feild">Email</td>
+                <td id="email"></td>
+            </tr>
+            <tr>
+                <td class="feild">Address</td>
+                <td id="address"><input type="text" placeholder="Enter Delivery Address"></td>
+            </tr>
+            <tr>
+                <td class="feild"Pincode>Pincode</td>
+                <td id="pin"><input type="number" placeholder="Enter Pincode"></td>
+            </tr>
+            <tr>
+                <td class="feild">Mobile</td>
+                <td id="mobile"><input type="number" placeholder="Enter Mobile Number"></td>
+            </tr>
+        </table>
     </div>
     <div id="footer">
         <h2>Contact us</h2>
@@ -54,8 +63,6 @@
         <a href="https://twitter.com/coach"><img style="width: 30px;" src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-logo-vector-png-clipart-1.png" alt="Error"></a>
         <a href="https://www.youtube.com/user/coach"><img style="width: 30px;" src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="Error "></a>
     </div>
-    
 </body>
 </html>
-<script src="./scripts/cart.js">
-</script>
+<script src="./scripts/checkout.js"></script>

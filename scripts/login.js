@@ -22,8 +22,10 @@ login.addEventListener("click",()=>{
         pflag = false;
         if(DataBase[i].email == email.value  && DataBase[i].password == password.value )
         {
+            let logininfo = DataBase[i];
+            localStorage.setItem("login",JSON.stringify(logininfo));
             alert("Login Successfull");
-            window.location.href = "./index.html";
+            window.location.href = "./cart.html";
         }
     }
     if(!eflag)
@@ -54,6 +56,6 @@ signup.addEventListener("click",()=>{
     .then(data=>{
         console.log(data);
         alert("Signed in Successfull");
-        window.location.href = "./index.html";
+        window.location.href = "./cart.html";
     })
 })

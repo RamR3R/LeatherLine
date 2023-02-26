@@ -71,3 +71,9 @@ function total(data){
     })
     price.innerText = "$"+x;
 }
+
+
+let cart  = document.getElementById("checkout");
+cart.addEventListener("click",()=>{
+    window.location.href = "./checkout.html";
+})

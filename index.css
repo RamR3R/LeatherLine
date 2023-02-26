@@ -194,7 +194,7 @@ button{
     margin-top: 10px;
 }
 #cart-filter>div{
-    width: 15%;
+    width: 20%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -263,3 +263,27 @@ h1{
     width: 80%;
 }
 .show{display: block;}
+
+#details-table{
+    width: 50%;
+    margin: auto;
+    height: 300px;
+    margin-top: 50px;
+    border: 1px solid red;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 100px;
+}
+td{
+    width: 50%;
+    border: 1px solid rebeccapurple;
+}
+td :not(.feild){
+    width: 80%;
+    margin-left: 0px;
+    display: flex;
+    align-self: flex-start;
+}
+.feild{
+    width: 20%;
+}
