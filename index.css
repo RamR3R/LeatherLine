@@ -305,7 +305,10 @@ td :not(.feild){
     margin-bottom: 100px;
 }
 
-
+a{
+    text-decoration: none;
+    color: black;
+}
 
 
 
