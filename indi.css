@@ -1,0 +1,84 @@
+body
+{
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+}
+#header{
+    height: 60px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    display: flex;
+    overflow: hidden;
+    /* border: 1px solid red; */
+    box-shadow: 1px 1px 4px 1px rgb(230, 230, 230);
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px  ;
+}
+#header>a{
+    width: 20%;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+#header img{
+    width: 100%;
+}
+#login-info{
+    /* border: 1px solid blue; */
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#wishlist{
+    width: 20%;
+    align-items: center;
+}
+#navbar{
+    /* border: 1px solid red; */
+    /* box-shadow: 1px 1px 10px 5px rgb(228, 228, 228); */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    /* margin-top: 10px; */
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+#navbar>a{
+    text-decoration: none;
+    color: black;
+}
+
+#footer{
+    height: 20px;
+    font-size: 16px;
+    bottom: 0;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px 20px 40px;
+    border: 1px solid white;
+    box-shadow: 1px 1px 10px 1px rgb(193, 192, 192);
+}
+
+#indi{
+    width: 90%;
+    margin: auto;
+}
+#indi>div{
+    display: flex;
+    justify-content: space-between;
+}
