@@ -70,6 +70,14 @@ function display(data)
             wish.innerText = "WishListed"
             wish.style.backgroundColor = 'pink';
             let LS  =  JSON.parse(localStorage.getItem("wish")) || [];
+            LS.push(element);
+            localStorage.setItem("wish",JSON.stringify(LS));
+            alert("Product Added to Wish List")
+        })
+        let buy = document.createElement("button");
+        buy.innerText = "Buy";
+        buy.addEventListener("click",()=>{
+            let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
             if(contains(element,LS))
             {
             alert("Already in cart");
@@ -80,14 +88,6 @@ function display(data)
             localStorage.setItem("cart",JSON.stringify(LS));
             alert("Product Added to Cart");
             }
-        })
-        let buy = document.createElement("button");
-        buy.innerText = "Buy";
-        buy.addEventListener("click",()=>{
-            let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
-            LS.push(element);
-            localStorage.setItem("cart",JSON.stringify(LS));
-            alert("Product Added to Cart");
         })
         add.append(wish,buy);
         card.append(img,title,price,add);
