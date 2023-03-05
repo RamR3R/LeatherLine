@@ -74,6 +74,7 @@ signup.addEventListener("click",()=>{
     lastname: lname.value,
     email: email.value,
     password: password.value,
+    nooforder : 0
     }
     fetch(api,{
         method:'POST',
