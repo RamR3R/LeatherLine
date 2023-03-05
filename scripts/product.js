@@ -25,6 +25,12 @@ search.addEventListener("click",()=>{
     console.log(filterData);
     display(filterData)
 })
+let reset = document.getElementById("reset");
+reset.addEventListener("click",()=>{
+    document.getElementById("from").value = "";
+    document.getElementById("to").value = "";
+    display(DataBase);
+})
 
 let filter = document.querySelector("#submitprice");
 filter.addEventListener("click",()=>{

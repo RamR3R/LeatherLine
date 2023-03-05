@@ -95,6 +95,12 @@ function display(data)
     });
     
 }
+let reset = document.getElementById("reset");
+reset.addEventListener("click",()=>{
+    document.getElementById("from").value = "";
+    document.getElementById("to").value = "";
+    display(DataBase);
+})
 
 function contains(obj,list)
 {

@@ -39,7 +39,12 @@ filter.addEventListener("click",()=>{
     })
     display(filterData);
 })
-
+let reset = document.getElementById("reset");
+reset.addEventListener("click",()=>{
+    document.getElementById("from").value = "";
+    document.getElementById("to").value = "";
+    display(DataBase);
+})
 
 function display(data)
 {
