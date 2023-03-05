@@ -49,6 +49,26 @@ function display(data)
         title.innerText = element.name;
         let price = document.createElement("h4");
         price.innerText = "$"+element.price;
+        let plus = document.createElement("button");
+        plus.innerText = " + ";
+        plus.addEventListener("click",()=>{
+            element.quantity++;
+        })
+        let minus = document.createElement("button");
+        minus.innerText = " + ";
+        minus.addEventListener("click",()=>{
+            if(element.quantity == 1)
+            {
+                let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
+                LS.splice(data.indexOf(element),1);
+                localStorage.setItem("cart",JSON.stringify(LS));
+                alert("Product deleted from cart");
+                display(LS);
+                total(LS);
+            }
+            else
+            element.quantity--;
+        })
         let buy = document.createElement("button");
         buy.innerText = "Delete";
         buy.addEventListener("click",()=>{
