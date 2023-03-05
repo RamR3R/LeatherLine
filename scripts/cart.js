@@ -18,7 +18,54 @@ filter.addEventListener("change",()=>{
     console.log(data);
     display(data);
 })
-
+let off = localStorage.getItem("offer");
+if(off!=null)
+{
+    let label = document.getElementById("label");
+        label.innerText = "Applied Coupon"
+        let coupon = document.getElementById("coupon");
+        coupon.setAttribute("placeholder","NEW15");
+        total(DataBase);
+}
+else{
+let offer = document.getElementById("offer")
+offer.addEventListener("click",()=>{
+    let login = JSON.parse(localStorage.getItem("login"));
+    if(login == null){
+    alert("login first to use Offer code");
+    window.location.href = "./login.html";
+    }
+    else
+    {
+        let label = document.getElementById("label");
+        label.innerText = "Applied Coupon"
+        let coupon = document.getElementById("coupon");
+        let tset = false;
+        if(coupon.value = "NEW15")
+        {
+            tset = true;
+            let offer = {
+                set : tset,
+                offer : 15
+            }
+            localStorage.setItem("offer",JSON.stringify(offer));
+            coupon.setAttribute("placeholder","NEW15")
+            total(DataBase) 
+        }
+               
+    }
+})
+}
+let cancel =  document.getElementById("cancel");
+cancel.addEventListener("click",()=>{
+    let label = document.getElementById("label");
+        label.innerText = "Apply Offer:)"
+        let coupon = document.getElementById("coupon");
+        coupon.value ="";
+        coupon.setAttribute("placeholder","Enter Coupon Code");
+        localStorage.removeItem("offer");
+        total(DataBase);
+})
 
 
 
@@ -103,9 +150,12 @@ function display(data)
 function total(data){
     let price = document.getElementById("total");
     let x = 0;
+    let offer = JSON.parse(localStorage.getItem("offer"));
     data.forEach(element=>{
         x += Number(element.price)*Number(element.quantity);
     })
+    if(offer!=null && offer.set)
+    x = Math.floor(x- x*(offer.offer/100));
     price.innerText = "$"+x;
 }
 
