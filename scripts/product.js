@@ -25,6 +25,12 @@ search.addEventListener("click",()=>{
     console.log(filterData);
     display(filterData)
 })
+let reset = document.getElementById("reset");
+reset.addEventListener("click",()=>{
+    document.getElementById("from").value = "";
+    document.getElementById("to").value = "";
+    display(DataBase);
+})
 
 let filter = document.querySelector("#submitprice");
 filter.addEventListener("click",()=>{
@@ -79,13 +85,31 @@ function display(data)
         buy.innerText = "Buy";
         buy.addEventListener("click",()=>{
             let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
+            if(contains(element,LS))
+            {
+            alert("Already in cart");
+            }
+            else{
+            element.quantity = 1;
             LS.push(element);
             localStorage.setItem("cart",JSON.stringify(LS));
             alert("Product Added to Cart");
+            }
         })
         add.append(wish,buy);
         card.append(img,title,price,add);
         body.append(card);
     });
     
+}
+
+
+function contains(obj,list)
+{
+    for(let i = 0 ; i<list.length ;i++)
+    {
+        if(list[i].name==obj.name)
+        return true;
+    }
+    return false;
 }

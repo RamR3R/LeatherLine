@@ -309,6 +309,21 @@ a{
     text-decoration: none;
     color: black;
 }
+#cart-filter>div:first-of-type{
+    width: 50%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+span{
+    font-weight: bold;
+}
 
 
 
@@ -365,4 +380,12 @@ a{
         align-items: center;
         justify-content: space-between;
     }
-}
+    #cart-filter>div:first-of-type{
+        width: 50%;
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+} 

@@ -18,7 +18,54 @@ filter.addEventListener("change",()=>{
     console.log(data);
     display(data);
 })
-
+let off = localStorage.getItem("offer");
+if(off!=null)
+{
+    let label = document.getElementById("label");
+        label.innerText = "Applied Coupon"
+        let coupon = document.getElementById("coupon");
+        coupon.setAttribute("placeholder","NEW15");
+        total(DataBase);
+}
+else{
+let offer = document.getElementById("offer")
+offer.addEventListener("click",()=>{
+    let login = JSON.parse(localStorage.getItem("login"));
+    if(login == null){
+    alert("login first to use Offer code");
+    window.location.href = "./login.html";
+    }
+    else
+    {
+        let label = document.getElementById("label");
+        label.innerText = "Applied Coupon"
+        let coupon = document.getElementById("coupon");
+        let tset = false;
+        if(coupon.value = "NEW15")
+        {
+            tset = true;
+            let offer = {
+                set : tset,
+                offer : 15
+            }
+            localStorage.setItem("offer",JSON.stringify(offer));
+            coupon.setAttribute("placeholder","NEW15")
+            total(DataBase) 
+        }
+               
+    }
+})
+}
+let cancel =  document.getElementById("cancel");
+cancel.addEventListener("click",()=>{
+    let label = document.getElementById("label");
+        label.innerText = "Apply Offer:)"
+        let coupon = document.getElementById("coupon");
+        coupon.value ="";
+        coupon.setAttribute("placeholder","Enter Coupon Code");
+        localStorage.removeItem("offer");
+        total(DataBase);
+})
 
 
 
@@ -49,6 +96,41 @@ function display(data)
         title.innerText = element.name;
         let price = document.createElement("h4");
         price.innerText = "$"+element.price;
+        let quan = document.createElement("div");
+        let plus = document.createElement("button");
+        plus.innerText = " + ";
+        plus.addEventListener("click",()=>{
+            let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
+                element.quantity++;
+                LS.splice(data.indexOf(element),1,element);
+                localStorage.setItem("cart",JSON.stringify(LS));
+                display(LS);
+                total(LS);
+        })
+        let quantity = document.createElement("p");
+        quantity.innerText = element.quantity;
+        let minus = document.createElement("button");
+        minus.innerText = " - ";
+        minus.addEventListener("click",()=>{
+            if(element.quantity == 1)
+            {
+                let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
+                LS.splice(data.indexOf(element),1);
+                localStorage.setItem("cart",JSON.stringify(LS));
+                alert("Product deleted from cart");
+                display(LS);
+                total(LS);
+            }
+            else{
+                let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
+                element.quantity--;
+                LS.splice(data.indexOf(element),1,element);
+                localStorage.setItem("cart",JSON.stringify(LS));
+                display(LS);
+                total(LS);
+            }
+        })
+        quan.append(plus,quantity,minus);
         let buy = document.createElement("button");
         buy.innerText = "Delete";
         buy.addEventListener("click",()=>{
@@ -59,7 +141,7 @@ function display(data)
             display(LS);
             total(LS);
         })
-        card.append(img,title,price,buy);
+        card.append(img,title,price,quan,buy);
         body.append(card);
     });
     
@@ -68,9 +150,12 @@ function display(data)
 function total(data){
     let price = document.getElementById("total");
     let x = 0;
+    let offer = JSON.parse(localStorage.getItem("offer"));
     data.forEach(element=>{
-        x += Number(element.price);
+        x += Number(element.price)*Number(element.quantity);
     })
+    if(offer!=null && offer.set)
+    x = Math.floor(x- x*(offer.offer/100));
     price.innerText = "$"+x;
 }
 

@@ -32,28 +32,33 @@ login.addEventListener("click",()=>{
     let email = document.querySelector("#login > input[type=email]");
     let password = document.querySelector("#login > input[type=password]");
     let remeber = document.querySelector("#signup  input[type=checkbox");
-    let eflag = true , pflag = true,flag =false;
+    let eflag = true , pflag = true, flag = false;
     for(let i = 0 ; i<DataBase.length ; i++)
     {
-        // if(DataBase[i].email == email.value)
-        // eflag  = false;
-        // if(DataBase[i].password == password.value)
-        // pflag = false;
+        if(DataBase[i].email == email.value)
+        eflag  = false;
+        if(DataBase[i].password == password.value)
+        pflag = false;
         if(DataBase[i].email == email.value  && DataBase[i].password == password.value )
         {
             flag= true;
+            console.log("true");
             let logininfo = DataBase[i];
             localStorage.setItem("login",JSON.stringify(logininfo));
             alert("Login Successfull");
             window.location.href = "./cart.html";
+            return 0;
         }
     }
-    // if(!eflag)
-    // alert("Email not found Please Signup");
-    // if(!pflag)
-    // alert("Wrong Password");
-    if(flag)
-    alert("Incorrect Credentials Check it Bro!)");
+    if(!flag){
+        alert("Incorrect Credentials Check it Bro!)");
+        console.log("error");
+        }
+    if(eflag)
+    alert("Email not found Please Signup");
+    if(pflag && !eflag)
+    alert("Wrong Password");
+    
 
 })
 
@@ -69,6 +74,7 @@ signup.addEventListener("click",()=>{
     lastname: lname.value,
     email: email.value,
     password: password.value,
+    nooforder : 0
     }
     fetch(api,{
         method:'POST',

@@ -39,7 +39,25 @@ wish.addEventListener("click",()=>{
 })
 buy.addEventListener("click",()=>{
     let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
-    LS.push(data);
-    localStorage.setItem("cart",JSON.stringify(LS));
-    alert("Product Added to Cart");
+    if(contains(data,LS))
+            {
+            alert("Already in cart");
+            }
+            else{
+            data.quantity = 1;
+            LS.push(data);
+            localStorage.setItem("cart",JSON.stringify(LS));
+            alert("Product Added to Cart");
+            }
 })
+
+
+function contains(obj,list)
+{
+    for(let i = 0 ; i<list.length ;i++)
+    {
+        if(list[i].name==obj.name)
+        return true;
+    }
+    return false;
+}
