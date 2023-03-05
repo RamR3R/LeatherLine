@@ -70,9 +70,16 @@ function display(data)
             wish.innerText = "WishListed"
             wish.style.backgroundColor = 'pink';
             let LS  =  JSON.parse(localStorage.getItem("wish")) || [];
+            if(contains(element,LS))
+            {
+            alert("Already in cart");
+            }
+            else{
+            element.quantity = 1;
             LS.push(element);
-            localStorage.setItem("wish",JSON.stringify(LS));
-            alert("Product Added to Wish List")
+            localStorage.setItem("cart",JSON.stringify(LS));
+            alert("Product Added to Cart");
+            }
         })
         let buy = document.createElement("button");
         buy.innerText = "Buy";
@@ -87,4 +94,15 @@ function display(data)
         body.append(card);
     });
     
+}
+
+
+function contains(obj,list)
+{
+    for(let i = 0 ; i<list.length ;i++)
+    {
+        if(list[i].name==obj.name)
+        return true;
+    }
+    return false;
 }
