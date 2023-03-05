@@ -49,13 +49,21 @@ function display(data)
         title.innerText = element.name;
         let price = document.createElement("h4");
         price.innerText = "$"+element.price;
+        let quan = document.createElement("div");
         let plus = document.createElement("button");
         plus.innerText = " + ";
         plus.addEventListener("click",()=>{
-            element.quantity++;
+            let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
+                element.quantity++;
+                LS.splice(data.indexOf(element),1,element);
+                localStorage.setItem("cart",JSON.stringify(LS));
+                display(LS);
+                total(LS);
         })
+        let quantity = document.createElement("p");
+        quantity.innerText = element.quantity;
         let minus = document.createElement("button");
-        minus.innerText = " + ";
+        minus.innerText = " - ";
         minus.addEventListener("click",()=>{
             if(element.quantity == 1)
             {
@@ -66,9 +74,16 @@ function display(data)
                 display(LS);
                 total(LS);
             }
-            else
-            element.quantity--;
+            else{
+                let LS  =  JSON.parse(localStorage.getItem("cart")) || [];
+                element.quantity--;
+                LS.splice(data.indexOf(element),1,element);
+                localStorage.setItem("cart",JSON.stringify(LS));
+                display(LS);
+                total(LS);
+            }
         })
+        quan.append(plus,quantity,minus);
         let buy = document.createElement("button");
         buy.innerText = "Delete";
         buy.addEventListener("click",()=>{
@@ -79,7 +94,7 @@ function display(data)
             display(LS);
             total(LS);
         })
-        card.append(img,title,price,buy);
+        card.append(img,title,price,quan,buy);
         body.append(card);
     });
     
@@ -89,7 +104,7 @@ function total(data){
     let price = document.getElementById("total");
     let x = 0;
     data.forEach(element=>{
-        x += Number(element.price);
+        x += Number(element.price)*Number(element.quantity);
     })
     price.innerText = "$"+x;
 }
