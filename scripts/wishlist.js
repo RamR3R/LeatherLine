@@ -3,7 +3,7 @@ display(DataBase);
 
 let filter = document.getElementById("filter");
 filter.addEventListener("change",()=>{
-    data = JSON.parse(localStorage.getItem("cart")) || [];
+    data = JSON.parse(localStorage.getItem("wish")) || [];
     if(filter.value == "asc" || filter.value == "")
     {
         data.sort((a,b)=>a.price-b.price);
@@ -51,6 +51,7 @@ function display(data)
         let add = document.createElement("div");
         buy.addEventListener("click",()=>{
             let wish  =  JSON.parse(localStorage.getItem("cart")) || [];
+            element.quantity = 1;
             wish.push(element);
             localStorage.setItem("cart",JSON.stringify(wish));
             let LS  =  JSON.parse(localStorage.getItem("wish")) || [];
