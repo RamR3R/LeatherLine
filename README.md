@@ -5,9 +5,10 @@ The construct week Project of Unit 2 (Web101)
 
 Individual project : Done by Ramsundar Sivkumar (fw25_083)
 
+# Deployed Link
+https://leatherline.netlify.app/
 
-
-![Logo](https://leatherlinev1.netlify.app/src/images/image__2_-removebg-preview.png)
+![Logo](https://leatherline.netlify.app/src/images/image__2_-removebg-preview.png)
 # Home page
 ![image](https://user-images.githubusercontent.com/121308432/223104998-978928d6-e71c-4616-9b8f-631267c22a04.png)
 
